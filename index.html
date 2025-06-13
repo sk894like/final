@@ -66,8 +66,8 @@ color:white;background:black;padding:1em;border-radius:8px;display:none;">請允
   <audio id="end-sound2" src="assets/end-sound2.mp3" preload="auto"></audio>
 
   <!-- AR 場景設定 -->
-  <a-scene mindar-image="imageTargetSrc: ./targets.mind;" embedded color-space="sRGB"
-    renderer="precision: mediump;" vr-mode-ui="enabled: false"
+  <a-scene mindar-image="imageTargetSrc: ./targets.mind;" embedded  vr-mode-ui="enabled: false"  color-space="sRGB"
+    renderer="precision: mediump;"
     device-orientation-permission-ui="enabled: true">
     
     <!-- 載入圖片資產 -->
@@ -229,6 +229,10 @@ color:white;background:black;padding:1em;border-radius:8px;display:none;">請允
       startCountdown();
       setInterval(monitorProximity, 500);
     });
+    document.querySelector("a-scene").addEventListener("arError", () => {
+  document.getElementById("camera-permission-msg").style.display = "block";
+});
+
   </script>
 </body>
 </html>
