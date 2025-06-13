@@ -6,7 +6,7 @@
 
   <!-- 載入 A-Frame 與 MindAR -->
   <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.2/dist/aframe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/aframe/mindar-aframe.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/aframe/mindar-aframe.prod.js"></script>
 
   <!-- 基本樣式設計 -->
   <style>
@@ -66,9 +66,13 @@ color:white;background:black;padding:1em;border-radius:8px;display:none;">請允
   <audio id="end-sound2" src="assets/end-sound2.mp3" preload="auto"></audio>
 
   <!-- AR 場景設定 -->
-  <a-scene mindar-image="imageTargetSrc: ./targets.mind;" embedded  vr-mode-ui="enabled: false"  color-space="sRGB"
-    renderer="precision: mediump;"
+  <a-scene
+    mindar-image="imageTargetSrc: ./targets.mind; autoStart: true; uiLoading: true; uiError: true; uiScanning: true"
+    color-space="sRGB"
+    renderer="colorManagement: true; physicallyCorrectLights: true; precision: mediump"
+    vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: true">
+
     
     <!-- 載入圖片資產 -->
     <a-assets>
