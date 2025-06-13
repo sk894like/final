@@ -217,6 +217,10 @@
     // 點擊開始按鈕後，啟動倒數與監控邏輯
     document.getElementById("start-button").addEventListener("click", () => {
       document.getElementById("start-button").style.display = "none";
+      
+    <div id="camera-permission-msg" style="position:absolute;top:10px;left:50%;transform:translateX(-50%);
+color:white;background:black;padding:1em;border-radius:8px;display:none;">請允許相機權限以開始遊戲</div>
+
       // 僅首次顯示提示訊息
      warningMessage.style.display = "block";
      setTimeout(() => warningMessage.style.display = "none", 2000);
