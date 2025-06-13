@@ -13,12 +13,13 @@
       }
 
       #countdown {
+        pointer-events: none;
         position: absolute;
         top: 20px;
         left: 50%;
         transform: translateX(-50%);
         font-size: 2em;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.5);
         z-index: 10;
         color: white;
         padding: 0.5em 1em;
@@ -27,8 +28,13 @@
         width: 300px; /* ← 新增這行 */
         text-align: center;
       }
+      canvas,
+      a-scene {
+        z-index: 0;
+      }
 
       #gif-display {
+        pointer-events: none;
         position: absolute;
         bottom: 10px;
         top:50%;
@@ -40,6 +46,7 @@
       }
 
       #end-message {
+        pointer-events: none;
         position: absolute;
         top: 80px;
         left: 50%;
